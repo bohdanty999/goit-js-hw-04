@@ -1,13 +1,16 @@
 function calcAverageCalories(days) {
   let totalIntake = 0;
-  let medianIntake = 0;
+  let daysArray = Array.from(days);
 
   for (let day of days) {
     totalIntake += day.calories;
   }
 
-  medianIntake = totalIntake / 7;
-  return medianIntake;
+  if (Object.keys(days).length === 0) {
+    return 0;
+  } else {
+    return (medianIntake = totalIntake / Object.keys(days).length);
+  }
 }
 
 console.log(
